@@ -14,5 +14,7 @@ hive para persistencia de datos
 
 freezed generador de codigo que ayuda a la legibilidad
 
+mockito para unit test
+
 
 
