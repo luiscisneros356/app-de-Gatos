@@ -1,12 +1,23 @@
 import 'package:faker/faker.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
-class Cat {
+part 'cat.g.dart';
+
+@HiveType(typeId: 1, adapterName: 'CatAdapter')
+class Cat extends HiveObject {
+  @HiveField(0)
   final List<dynamic> breeds;
+  @HiveField(1)
   final String id;
+  @HiveField(2)
   final String url;
+  @HiveField(3)
   final String name;
+  @HiveField(4)
   final List<String> description;
+  @HiveField(5)
   final int width;
+  @HiveField(6)
   final int height;
 
   Cat(

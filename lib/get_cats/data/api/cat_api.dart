@@ -27,7 +27,7 @@ class CatApi {
         throw Exception('Error obteniendo la informacion');
       }
     } on SocketException {
-      throw Exception('No tenes conexion a internet');
+      throw const SocketException('No tenes conexion a internet');
     } catch (e, s) {
       dev.log(e.toString());
       dev.log(s.toString());

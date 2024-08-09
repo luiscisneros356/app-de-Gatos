@@ -1,12 +1,15 @@
+import 'package:challenge_flutter/get_cats/presentation/bloc/extemsions/main_screen_bloc_extemsion.dart';
 import 'package:challenge_flutter/get_cats/presentation/widgets/cat_details.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../domain/models/cat.dart';
+import '../bloc/main_screen_bloc.dart';
 import 'cat_image_network.dart';
 
 class CatsSlider extends StatefulWidget {
-  const CatsSlider({super.key, required this.cats});
-  final List<Cat> cats;
+  const CatsSlider({
+    super.key,
+  });
 
   @override
   State<CatsSlider> createState() => _CatsSliderState();
@@ -24,11 +27,16 @@ class _CatsSliderState extends State<CatsSlider> {
   @override
   Widget build(BuildContext context) {
     final mq = MediaQuery.of(context).size;
+
+    final cats = context.watch<MainScreenBloc>().state.cats;
+
     return PageView.builder(
-      itemCount: widget.cats.length,
+      itemCount: cats.length,
       controller: _pageController,
       itemBuilder: (context, index) {
-        final cat = widget.cats[index];
+        final cat = cats[index];
+        print(cat.url);
+        print(cat.box?.isEmpty);
 
         return Hero(
             tag: cat.id,

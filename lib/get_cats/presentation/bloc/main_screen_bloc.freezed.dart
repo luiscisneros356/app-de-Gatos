@@ -18,33 +18,39 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$MainScreenEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() get,
+    required TResult Function(bool withConnectivity) get,
+    required TResult Function() chargeData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? get,
+    TResult? Function(bool withConnectivity)? get,
+    TResult? Function()? chargeData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? get,
+    TResult Function(bool withConnectivity)? get,
+    TResult Function()? chargeData,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(MainScreenEventGet value) get,
+    required TResult Function(MainScreenEventChargeData value) chargeData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(MainScreenEventGet value)? get,
+    TResult? Function(MainScreenEventChargeData value)? chargeData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(MainScreenEventGet value)? get,
+    TResult Function(MainScreenEventChargeData value)? chargeData,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -73,6 +79,8 @@ abstract class _$$MainScreenEventGetImplCopyWith<$Res> {
   factory _$$MainScreenEventGetImplCopyWith(_$MainScreenEventGetImpl value,
           $Res Function(_$MainScreenEventGetImpl) then) =
       __$$MainScreenEventGetImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({bool withConnectivity});
 }
 
 /// @nodoc
@@ -82,51 +90,80 @@ class __$$MainScreenEventGetImplCopyWithImpl<$Res>
   __$$MainScreenEventGetImplCopyWithImpl(_$MainScreenEventGetImpl _value,
       $Res Function(_$MainScreenEventGetImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? withConnectivity = null,
+  }) {
+    return _then(_$MainScreenEventGetImpl(
+      null == withConnectivity
+          ? _value.withConnectivity
+          : withConnectivity // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$MainScreenEventGetImpl implements MainScreenEventGet {
-  const _$MainScreenEventGetImpl();
+  const _$MainScreenEventGetImpl(this.withConnectivity);
+
+  @override
+  final bool withConnectivity;
 
   @override
   String toString() {
-    return 'MainScreenEvent.get()';
+    return 'MainScreenEvent.get(withConnectivity: $withConnectivity)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$MainScreenEventGetImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$MainScreenEventGetImpl &&
+            (identical(other.withConnectivity, withConnectivity) ||
+                other.withConnectivity == withConnectivity));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, withConnectivity);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$MainScreenEventGetImplCopyWith<_$MainScreenEventGetImpl> get copyWith =>
+      __$$MainScreenEventGetImplCopyWithImpl<_$MainScreenEventGetImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() get,
+    required TResult Function(bool withConnectivity) get,
+    required TResult Function() chargeData,
   }) {
-    return get();
+    return get(withConnectivity);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? get,
+    TResult? Function(bool withConnectivity)? get,
+    TResult? Function()? chargeData,
   }) {
-    return get?.call();
+    return get?.call(withConnectivity);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? get,
+    TResult Function(bool withConnectivity)? get,
+    TResult Function()? chargeData,
     required TResult orElse(),
   }) {
     if (get != null) {
-      return get();
+      return get(withConnectivity);
     }
     return orElse();
   }
@@ -135,6 +172,7 @@ class _$MainScreenEventGetImpl implements MainScreenEventGet {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(MainScreenEventGet value) get,
+    required TResult Function(MainScreenEventChargeData value) chargeData,
   }) {
     return get(this);
   }
@@ -143,6 +181,7 @@ class _$MainScreenEventGetImpl implements MainScreenEventGet {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(MainScreenEventGet value)? get,
+    TResult? Function(MainScreenEventChargeData value)? chargeData,
   }) {
     return get?.call(this);
   }
@@ -151,6 +190,7 @@ class _$MainScreenEventGetImpl implements MainScreenEventGet {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(MainScreenEventGet value)? get,
+    TResult Function(MainScreenEventChargeData value)? chargeData,
     required TResult orElse(),
   }) {
     if (get != null) {
@@ -161,7 +201,118 @@ class _$MainScreenEventGetImpl implements MainScreenEventGet {
 }
 
 abstract class MainScreenEventGet implements MainScreenEvent {
-  const factory MainScreenEventGet() = _$MainScreenEventGetImpl;
+  const factory MainScreenEventGet(final bool withConnectivity) =
+      _$MainScreenEventGetImpl;
+
+  bool get withConnectivity;
+  @JsonKey(ignore: true)
+  _$$MainScreenEventGetImplCopyWith<_$MainScreenEventGetImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$MainScreenEventChargeDataImplCopyWith<$Res> {
+  factory _$$MainScreenEventChargeDataImplCopyWith(
+          _$MainScreenEventChargeDataImpl value,
+          $Res Function(_$MainScreenEventChargeDataImpl) then) =
+      __$$MainScreenEventChargeDataImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$MainScreenEventChargeDataImplCopyWithImpl<$Res>
+    extends _$MainScreenEventCopyWithImpl<$Res, _$MainScreenEventChargeDataImpl>
+    implements _$$MainScreenEventChargeDataImplCopyWith<$Res> {
+  __$$MainScreenEventChargeDataImplCopyWithImpl(
+      _$MainScreenEventChargeDataImpl _value,
+      $Res Function(_$MainScreenEventChargeDataImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$MainScreenEventChargeDataImpl implements MainScreenEventChargeData {
+  const _$MainScreenEventChargeDataImpl();
+
+  @override
+  String toString() {
+    return 'MainScreenEvent.chargeData()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$MainScreenEventChargeDataImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(bool withConnectivity) get,
+    required TResult Function() chargeData,
+  }) {
+    return chargeData();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(bool withConnectivity)? get,
+    TResult? Function()? chargeData,
+  }) {
+    return chargeData?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(bool withConnectivity)? get,
+    TResult Function()? chargeData,
+    required TResult orElse(),
+  }) {
+    if (chargeData != null) {
+      return chargeData();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(MainScreenEventGet value) get,
+    required TResult Function(MainScreenEventChargeData value) chargeData,
+  }) {
+    return chargeData(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(MainScreenEventGet value)? get,
+    TResult? Function(MainScreenEventChargeData value)? chargeData,
+  }) {
+    return chargeData?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(MainScreenEventGet value)? get,
+    TResult Function(MainScreenEventChargeData value)? chargeData,
+    required TResult orElse(),
+  }) {
+    if (chargeData != null) {
+      return chargeData(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class MainScreenEventChargeData implements MainScreenEvent {
+  const factory MainScreenEventChargeData() = _$MainScreenEventChargeDataImpl;
 }
 
 /// @nodoc
@@ -171,6 +322,7 @@ mixin _$MainScreenState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<Cat> cats) loaded,
+    required TResult Function() offline,
     required TResult Function(String message) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -179,6 +331,7 @@ mixin _$MainScreenState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<Cat> cats)? loaded,
+    TResult? Function()? offline,
     TResult? Function(String message)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -187,6 +340,7 @@ mixin _$MainScreenState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<Cat> cats)? loaded,
+    TResult Function()? offline,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) =>
@@ -196,6 +350,7 @@ mixin _$MainScreenState {
     required TResult Function(MainScreenStateInitial value) initial,
     required TResult Function(MainScreenStateLoading value) loading,
     required TResult Function(MainScreenStateLoaded value) loaded,
+    required TResult Function(MainScreenStateOffline value) offline,
     required TResult Function(MainScreenStateError value) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -204,6 +359,7 @@ mixin _$MainScreenState {
     TResult? Function(MainScreenStateInitial value)? initial,
     TResult? Function(MainScreenStateLoading value)? loading,
     TResult? Function(MainScreenStateLoaded value)? loaded,
+    TResult? Function(MainScreenStateOffline value)? offline,
     TResult? Function(MainScreenStateError value)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -212,6 +368,7 @@ mixin _$MainScreenState {
     TResult Function(MainScreenStateInitial value)? initial,
     TResult Function(MainScreenStateLoading value)? loading,
     TResult Function(MainScreenStateLoaded value)? loaded,
+    TResult Function(MainScreenStateOffline value)? offline,
     TResult Function(MainScreenStateError value)? error,
     required TResult orElse(),
   }) =>
@@ -280,6 +437,7 @@ class _$MainScreenStateInitialImpl implements MainScreenStateInitial {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<Cat> cats) loaded,
+    required TResult Function() offline,
     required TResult Function(String message) error,
   }) {
     return initial();
@@ -291,6 +449,7 @@ class _$MainScreenStateInitialImpl implements MainScreenStateInitial {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<Cat> cats)? loaded,
+    TResult? Function()? offline,
     TResult? Function(String message)? error,
   }) {
     return initial?.call();
@@ -302,6 +461,7 @@ class _$MainScreenStateInitialImpl implements MainScreenStateInitial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<Cat> cats)? loaded,
+    TResult Function()? offline,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -317,6 +477,7 @@ class _$MainScreenStateInitialImpl implements MainScreenStateInitial {
     required TResult Function(MainScreenStateInitial value) initial,
     required TResult Function(MainScreenStateLoading value) loading,
     required TResult Function(MainScreenStateLoaded value) loaded,
+    required TResult Function(MainScreenStateOffline value) offline,
     required TResult Function(MainScreenStateError value) error,
   }) {
     return initial(this);
@@ -328,6 +489,7 @@ class _$MainScreenStateInitialImpl implements MainScreenStateInitial {
     TResult? Function(MainScreenStateInitial value)? initial,
     TResult? Function(MainScreenStateLoading value)? loading,
     TResult? Function(MainScreenStateLoaded value)? loaded,
+    TResult? Function(MainScreenStateOffline value)? offline,
     TResult? Function(MainScreenStateError value)? error,
   }) {
     return initial?.call(this);
@@ -339,6 +501,7 @@ class _$MainScreenStateInitialImpl implements MainScreenStateInitial {
     TResult Function(MainScreenStateInitial value)? initial,
     TResult Function(MainScreenStateLoading value)? loading,
     TResult Function(MainScreenStateLoaded value)? loaded,
+    TResult Function(MainScreenStateOffline value)? offline,
     TResult Function(MainScreenStateError value)? error,
     required TResult orElse(),
   }) {
@@ -397,6 +560,7 @@ class _$MainScreenStateLoadingImpl implements MainScreenStateLoading {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<Cat> cats) loaded,
+    required TResult Function() offline,
     required TResult Function(String message) error,
   }) {
     return loading();
@@ -408,6 +572,7 @@ class _$MainScreenStateLoadingImpl implements MainScreenStateLoading {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<Cat> cats)? loaded,
+    TResult? Function()? offline,
     TResult? Function(String message)? error,
   }) {
     return loading?.call();
@@ -419,6 +584,7 @@ class _$MainScreenStateLoadingImpl implements MainScreenStateLoading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<Cat> cats)? loaded,
+    TResult Function()? offline,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -434,6 +600,7 @@ class _$MainScreenStateLoadingImpl implements MainScreenStateLoading {
     required TResult Function(MainScreenStateInitial value) initial,
     required TResult Function(MainScreenStateLoading value) loading,
     required TResult Function(MainScreenStateLoaded value) loaded,
+    required TResult Function(MainScreenStateOffline value) offline,
     required TResult Function(MainScreenStateError value) error,
   }) {
     return loading(this);
@@ -445,6 +612,7 @@ class _$MainScreenStateLoadingImpl implements MainScreenStateLoading {
     TResult? Function(MainScreenStateInitial value)? initial,
     TResult? Function(MainScreenStateLoading value)? loading,
     TResult? Function(MainScreenStateLoaded value)? loaded,
+    TResult? Function(MainScreenStateOffline value)? offline,
     TResult? Function(MainScreenStateError value)? error,
   }) {
     return loading?.call(this);
@@ -456,6 +624,7 @@ class _$MainScreenStateLoadingImpl implements MainScreenStateLoading {
     TResult Function(MainScreenStateInitial value)? initial,
     TResult Function(MainScreenStateLoading value)? loading,
     TResult Function(MainScreenStateLoaded value)? loaded,
+    TResult Function(MainScreenStateOffline value)? offline,
     TResult Function(MainScreenStateError value)? error,
     required TResult orElse(),
   }) {
@@ -545,6 +714,7 @@ class _$MainScreenStateLoadedImpl implements MainScreenStateLoaded {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<Cat> cats) loaded,
+    required TResult Function() offline,
     required TResult Function(String message) error,
   }) {
     return loaded(cats);
@@ -556,6 +726,7 @@ class _$MainScreenStateLoadedImpl implements MainScreenStateLoaded {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<Cat> cats)? loaded,
+    TResult? Function()? offline,
     TResult? Function(String message)? error,
   }) {
     return loaded?.call(cats);
@@ -567,6 +738,7 @@ class _$MainScreenStateLoadedImpl implements MainScreenStateLoaded {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<Cat> cats)? loaded,
+    TResult Function()? offline,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -582,6 +754,7 @@ class _$MainScreenStateLoadedImpl implements MainScreenStateLoaded {
     required TResult Function(MainScreenStateInitial value) initial,
     required TResult Function(MainScreenStateLoading value) loading,
     required TResult Function(MainScreenStateLoaded value) loaded,
+    required TResult Function(MainScreenStateOffline value) offline,
     required TResult Function(MainScreenStateError value) error,
   }) {
     return loaded(this);
@@ -593,6 +766,7 @@ class _$MainScreenStateLoadedImpl implements MainScreenStateLoaded {
     TResult? Function(MainScreenStateInitial value)? initial,
     TResult? Function(MainScreenStateLoading value)? loading,
     TResult? Function(MainScreenStateLoaded value)? loaded,
+    TResult? Function(MainScreenStateOffline value)? offline,
     TResult? Function(MainScreenStateError value)? error,
   }) {
     return loaded?.call(this);
@@ -604,6 +778,7 @@ class _$MainScreenStateLoadedImpl implements MainScreenStateLoaded {
     TResult Function(MainScreenStateInitial value)? initial,
     TResult Function(MainScreenStateLoading value)? loading,
     TResult Function(MainScreenStateLoaded value)? loaded,
+    TResult Function(MainScreenStateOffline value)? offline,
     TResult Function(MainScreenStateError value)? error,
     required TResult orElse(),
   }) {
@@ -622,6 +797,129 @@ abstract class MainScreenStateLoaded implements MainScreenState {
   @JsonKey(ignore: true)
   _$$MainScreenStateLoadedImplCopyWith<_$MainScreenStateLoadedImpl>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$MainScreenStateOfflineImplCopyWith<$Res> {
+  factory _$$MainScreenStateOfflineImplCopyWith(
+          _$MainScreenStateOfflineImpl value,
+          $Res Function(_$MainScreenStateOfflineImpl) then) =
+      __$$MainScreenStateOfflineImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$MainScreenStateOfflineImplCopyWithImpl<$Res>
+    extends _$MainScreenStateCopyWithImpl<$Res, _$MainScreenStateOfflineImpl>
+    implements _$$MainScreenStateOfflineImplCopyWith<$Res> {
+  __$$MainScreenStateOfflineImplCopyWithImpl(
+      _$MainScreenStateOfflineImpl _value,
+      $Res Function(_$MainScreenStateOfflineImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$MainScreenStateOfflineImpl implements MainScreenStateOffline {
+  const _$MainScreenStateOfflineImpl();
+
+  @override
+  String toString() {
+    return 'MainScreenState.offline()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$MainScreenStateOfflineImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(List<Cat> cats) loaded,
+    required TResult Function() offline,
+    required TResult Function(String message) error,
+  }) {
+    return offline();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(List<Cat> cats)? loaded,
+    TResult? Function()? offline,
+    TResult? Function(String message)? error,
+  }) {
+    return offline?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(List<Cat> cats)? loaded,
+    TResult Function()? offline,
+    TResult Function(String message)? error,
+    required TResult orElse(),
+  }) {
+    if (offline != null) {
+      return offline();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(MainScreenStateInitial value) initial,
+    required TResult Function(MainScreenStateLoading value) loading,
+    required TResult Function(MainScreenStateLoaded value) loaded,
+    required TResult Function(MainScreenStateOffline value) offline,
+    required TResult Function(MainScreenStateError value) error,
+  }) {
+    return offline(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(MainScreenStateInitial value)? initial,
+    TResult? Function(MainScreenStateLoading value)? loading,
+    TResult? Function(MainScreenStateLoaded value)? loaded,
+    TResult? Function(MainScreenStateOffline value)? offline,
+    TResult? Function(MainScreenStateError value)? error,
+  }) {
+    return offline?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(MainScreenStateInitial value)? initial,
+    TResult Function(MainScreenStateLoading value)? loading,
+    TResult Function(MainScreenStateLoaded value)? loaded,
+    TResult Function(MainScreenStateOffline value)? offline,
+    TResult Function(MainScreenStateError value)? error,
+    required TResult orElse(),
+  }) {
+    if (offline != null) {
+      return offline(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class MainScreenStateOffline implements MainScreenState {
+  const factory MainScreenStateOffline() = _$MainScreenStateOfflineImpl;
 }
 
 /// @nodoc
@@ -693,6 +991,7 @@ class _$MainScreenStateErrorImpl implements MainScreenStateError {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<Cat> cats) loaded,
+    required TResult Function() offline,
     required TResult Function(String message) error,
   }) {
     return error(message);
@@ -704,6 +1003,7 @@ class _$MainScreenStateErrorImpl implements MainScreenStateError {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<Cat> cats)? loaded,
+    TResult? Function()? offline,
     TResult? Function(String message)? error,
   }) {
     return error?.call(message);
@@ -715,6 +1015,7 @@ class _$MainScreenStateErrorImpl implements MainScreenStateError {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<Cat> cats)? loaded,
+    TResult Function()? offline,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -730,6 +1031,7 @@ class _$MainScreenStateErrorImpl implements MainScreenStateError {
     required TResult Function(MainScreenStateInitial value) initial,
     required TResult Function(MainScreenStateLoading value) loading,
     required TResult Function(MainScreenStateLoaded value) loaded,
+    required TResult Function(MainScreenStateOffline value) offline,
     required TResult Function(MainScreenStateError value) error,
   }) {
     return error(this);
@@ -741,6 +1043,7 @@ class _$MainScreenStateErrorImpl implements MainScreenStateError {
     TResult? Function(MainScreenStateInitial value)? initial,
     TResult? Function(MainScreenStateLoading value)? loading,
     TResult? Function(MainScreenStateLoaded value)? loaded,
+    TResult? Function(MainScreenStateOffline value)? offline,
     TResult? Function(MainScreenStateError value)? error,
   }) {
     return error?.call(this);
@@ -752,6 +1055,7 @@ class _$MainScreenStateErrorImpl implements MainScreenStateError {
     TResult Function(MainScreenStateInitial value)? initial,
     TResult Function(MainScreenStateLoading value)? loading,
     TResult Function(MainScreenStateLoaded value)? loaded,
+    TResult Function(MainScreenStateOffline value)? offline,
     TResult Function(MainScreenStateError value)? error,
     required TResult orElse(),
   }) {

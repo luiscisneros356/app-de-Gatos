@@ -14,7 +14,16 @@ class CatImageNetwork extends StatelessWidget {
               color: Colors.red,
               strokeWidth: 20,
             ),
-      errorBuilder: (context, error, stackTrace) => const Icon(Icons.error),
+      errorBuilder: (context, error, stackTrace) => const Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(
+            Icons.error,
+            size: 50,
+          ),
+          Text("Discuplas, algo salio mal al cargar el dato"),
+        ],
+      ),
       fit: BoxFit.cover,
     );
   }
