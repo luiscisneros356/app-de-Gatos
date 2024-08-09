@@ -19,6 +19,8 @@ class Cat extends HiveObject {
   final int width;
   @HiveField(6)
   final int height;
+  @HiveField(7)
+  bool isFavorite;
 
   Cat(
       {required this.breeds,
@@ -27,7 +29,8 @@ class Cat extends HiveObject {
       required this.width,
       required this.height,
       required this.name,
-      required this.description});
+      required this.description,
+      this.isFavorite = false});
 
   factory Cat.fromJson(Map<String, dynamic> json) {
     return Cat(
@@ -38,6 +41,28 @@ class Cat extends HiveObject {
       height: json['height'],
       name: Faker().animal.name(),
       description: Faker().lorem.sentences(15),
+      isFavorite: false,
+    );
+  }
+
+  Cat copyWith(
+      {List<dynamic>? breeds,
+      String? id,
+      String? url,
+      int? width,
+      int? height,
+      String? name,
+      List<String>? description,
+      bool? isFavorite}) {
+    return Cat(
+      breeds: breeds ?? this.breeds,
+      id: id ?? this.id,
+      url: url ?? this.url,
+      width: width ?? this.width,
+      height: height ?? this.height,
+      name: name ?? this.name,
+      description: description ?? this.description,
+      isFavorite: isFavorite ?? this.isFavorite,
     );
   }
 
@@ -50,6 +75,7 @@ class Cat extends HiveObject {
       height: 0,
       name: '',
       description: [],
+      isFavorite: false,
     );
   }
 }

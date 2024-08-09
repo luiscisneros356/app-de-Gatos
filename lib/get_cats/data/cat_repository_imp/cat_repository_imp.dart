@@ -1,14 +1,14 @@
 import 'package:challenge_flutter/get_cats/data/api/cat_api.dart';
-import 'package:challenge_flutter/get_cats/data/local/hive_local.dart';
+import 'package:challenge_flutter/get_cats/data/local/hive_get_cats_datasource.dart';
 
 import '../../domain/cat_repository/cat_repository.dart';
 import '../../domain/models/cat.dart';
 
-class CatRepositoryImp implements CatRepository {
+class CatRepositoryImp extends CatRepository {
   final CatApi _catApi;
-  final CatLocalData _catLocalData;
+  final HiveGetCatsDataSource _catLocalData;
 
-  CatRepositoryImp({required CatApi catApi, required CatLocalData catLocalData})
+  CatRepositoryImp({required CatApi catApi, required HiveGetCatsDataSource catLocalData})
       : _catApi = catApi,
         _catLocalData = catLocalData;
   @override

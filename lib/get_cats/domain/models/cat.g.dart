@@ -24,13 +24,14 @@ class CatAdapter extends TypeAdapter<Cat> {
       height: fields[6] as int,
       name: fields[3] as String,
       description: (fields[4] as List).cast<String>(),
+      isFavorite: fields[7] as bool,
     );
   }
 
   @override
   void write(BinaryWriter writer, Cat obj) {
     writer
-      ..writeByte(7)
+      ..writeByte(8)
       ..writeByte(0)
       ..write(obj.breeds)
       ..writeByte(1)
@@ -44,7 +45,9 @@ class CatAdapter extends TypeAdapter<Cat> {
       ..writeByte(5)
       ..write(obj.width)
       ..writeByte(6)
-      ..write(obj.height);
+      ..write(obj.height)
+      ..writeByte(7)
+      ..write(obj.isFavorite);
   }
 
   @override

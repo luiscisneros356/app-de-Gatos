@@ -4,6 +4,6 @@ part of 'favorites_cats_bloc.dart';
 class FavoritesCatsEvent with _$FavoritesCatsEvent {
   const factory FavoritesCatsEvent.addToFavorites(Cat cat) = FavoritesCatsEventAddToFavorites;
   const factory FavoritesCatsEvent.removeFromFavorites(Cat cat) = FavoritesCatsEventRemoveFromFavorites;
-  const factory FavoritesCatsEvent.loadFavorites() = FavoritesCatsEventLoadFavorites;
-  const factory FavoritesCatsEvent.clearFavorites() = FavoritesCatsEventClearFavorites;
+  const factory FavoritesCatsEvent.addFavoritesToLocal(Cat cat) = FavoritesCatsEventAddFavoritesToLocal;
+  const factory FavoritesCatsEvent.loadFavoritesFromLocal() = FavoritesCatsEventLoadFavoritesFromLocal;
 }

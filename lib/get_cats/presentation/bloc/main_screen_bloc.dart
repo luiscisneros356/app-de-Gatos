@@ -14,10 +14,6 @@ class MainScreenBloc extends Bloc<MainScreenEvent, MainScreenState> {
   final CatRepository _repository;
   final Connectivity _connectivity;
 
-  final bool _isConnected = false;
-  bool get isConnected => _isConnected;
-  set isConnected(bool value) => value = _isConnected;
-
   MainScreenBloc(this._repository, this._connectivity) : super(const MainScreenState.initial()) {
     on<MainScreenEventChargeData>((event, emit) {
       _connectivity.onConnectivityChanged.listen((event) {
@@ -31,6 +27,7 @@ class MainScreenBloc extends Bloc<MainScreenEvent, MainScreenState> {
           emit(const MainScreenState.loading());
 
           final cat = await _repository.getCats();
+
           emit(MainScreenState.loaded(cat));
         } else {
           final cat = _repository.getLocalCats();

@@ -20,24 +20,24 @@ mixin _$FavoritesCatsEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(Cat cat) addToFavorites,
     required TResult Function(Cat cat) removeFromFavorites,
-    required TResult Function() loadFavorites,
-    required TResult Function() clearFavorites,
+    required TResult Function(Cat cat) addFavoritesToLocal,
+    required TResult Function() loadFavoritesFromLocal,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(Cat cat)? addToFavorites,
     TResult? Function(Cat cat)? removeFromFavorites,
-    TResult? Function()? loadFavorites,
-    TResult? Function()? clearFavorites,
+    TResult? Function(Cat cat)? addFavoritesToLocal,
+    TResult? Function()? loadFavoritesFromLocal,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Cat cat)? addToFavorites,
     TResult Function(Cat cat)? removeFromFavorites,
-    TResult Function()? loadFavorites,
-    TResult Function()? clearFavorites,
+    TResult Function(Cat cat)? addFavoritesToLocal,
+    TResult Function()? loadFavoritesFromLocal,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -47,10 +47,10 @@ mixin _$FavoritesCatsEvent {
         addToFavorites,
     required TResult Function(FavoritesCatsEventRemoveFromFavorites value)
         removeFromFavorites,
-    required TResult Function(FavoritesCatsEventLoadFavorites value)
-        loadFavorites,
-    required TResult Function(FavoritesCatsEventClearFavorites value)
-        clearFavorites,
+    required TResult Function(FavoritesCatsEventAddFavoritesToLocal value)
+        addFavoritesToLocal,
+    required TResult Function(FavoritesCatsEventLoadFavoritesFromLocal value)
+        loadFavoritesFromLocal,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -58,8 +58,10 @@ mixin _$FavoritesCatsEvent {
     TResult? Function(FavoritesCatsEventAddToFavorites value)? addToFavorites,
     TResult? Function(FavoritesCatsEventRemoveFromFavorites value)?
         removeFromFavorites,
-    TResult? Function(FavoritesCatsEventLoadFavorites value)? loadFavorites,
-    TResult? Function(FavoritesCatsEventClearFavorites value)? clearFavorites,
+    TResult? Function(FavoritesCatsEventAddFavoritesToLocal value)?
+        addFavoritesToLocal,
+    TResult? Function(FavoritesCatsEventLoadFavoritesFromLocal value)?
+        loadFavoritesFromLocal,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -67,8 +69,10 @@ mixin _$FavoritesCatsEvent {
     TResult Function(FavoritesCatsEventAddToFavorites value)? addToFavorites,
     TResult Function(FavoritesCatsEventRemoveFromFavorites value)?
         removeFromFavorites,
-    TResult Function(FavoritesCatsEventLoadFavorites value)? loadFavorites,
-    TResult Function(FavoritesCatsEventClearFavorites value)? clearFavorites,
+    TResult Function(FavoritesCatsEventAddFavoritesToLocal value)?
+        addFavoritesToLocal,
+    TResult Function(FavoritesCatsEventLoadFavoritesFromLocal value)?
+        loadFavoritesFromLocal,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -164,8 +168,8 @@ class _$FavoritesCatsEventAddToFavoritesImpl
   TResult when<TResult extends Object?>({
     required TResult Function(Cat cat) addToFavorites,
     required TResult Function(Cat cat) removeFromFavorites,
-    required TResult Function() loadFavorites,
-    required TResult Function() clearFavorites,
+    required TResult Function(Cat cat) addFavoritesToLocal,
+    required TResult Function() loadFavoritesFromLocal,
   }) {
     return addToFavorites(cat);
   }
@@ -175,8 +179,8 @@ class _$FavoritesCatsEventAddToFavoritesImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(Cat cat)? addToFavorites,
     TResult? Function(Cat cat)? removeFromFavorites,
-    TResult? Function()? loadFavorites,
-    TResult? Function()? clearFavorites,
+    TResult? Function(Cat cat)? addFavoritesToLocal,
+    TResult? Function()? loadFavoritesFromLocal,
   }) {
     return addToFavorites?.call(cat);
   }
@@ -186,8 +190,8 @@ class _$FavoritesCatsEventAddToFavoritesImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Cat cat)? addToFavorites,
     TResult Function(Cat cat)? removeFromFavorites,
-    TResult Function()? loadFavorites,
-    TResult Function()? clearFavorites,
+    TResult Function(Cat cat)? addFavoritesToLocal,
+    TResult Function()? loadFavoritesFromLocal,
     required TResult orElse(),
   }) {
     if (addToFavorites != null) {
@@ -203,10 +207,10 @@ class _$FavoritesCatsEventAddToFavoritesImpl
         addToFavorites,
     required TResult Function(FavoritesCatsEventRemoveFromFavorites value)
         removeFromFavorites,
-    required TResult Function(FavoritesCatsEventLoadFavorites value)
-        loadFavorites,
-    required TResult Function(FavoritesCatsEventClearFavorites value)
-        clearFavorites,
+    required TResult Function(FavoritesCatsEventAddFavoritesToLocal value)
+        addFavoritesToLocal,
+    required TResult Function(FavoritesCatsEventLoadFavoritesFromLocal value)
+        loadFavoritesFromLocal,
   }) {
     return addToFavorites(this);
   }
@@ -217,8 +221,10 @@ class _$FavoritesCatsEventAddToFavoritesImpl
     TResult? Function(FavoritesCatsEventAddToFavorites value)? addToFavorites,
     TResult? Function(FavoritesCatsEventRemoveFromFavorites value)?
         removeFromFavorites,
-    TResult? Function(FavoritesCatsEventLoadFavorites value)? loadFavorites,
-    TResult? Function(FavoritesCatsEventClearFavorites value)? clearFavorites,
+    TResult? Function(FavoritesCatsEventAddFavoritesToLocal value)?
+        addFavoritesToLocal,
+    TResult? Function(FavoritesCatsEventLoadFavoritesFromLocal value)?
+        loadFavoritesFromLocal,
   }) {
     return addToFavorites?.call(this);
   }
@@ -229,8 +235,10 @@ class _$FavoritesCatsEventAddToFavoritesImpl
     TResult Function(FavoritesCatsEventAddToFavorites value)? addToFavorites,
     TResult Function(FavoritesCatsEventRemoveFromFavorites value)?
         removeFromFavorites,
-    TResult Function(FavoritesCatsEventLoadFavorites value)? loadFavorites,
-    TResult Function(FavoritesCatsEventClearFavorites value)? clearFavorites,
+    TResult Function(FavoritesCatsEventAddFavoritesToLocal value)?
+        addFavoritesToLocal,
+    TResult Function(FavoritesCatsEventLoadFavoritesFromLocal value)?
+        loadFavoritesFromLocal,
     required TResult orElse(),
   }) {
     if (addToFavorites != null) {
@@ -323,8 +331,8 @@ class _$FavoritesCatsEventRemoveFromFavoritesImpl
   TResult when<TResult extends Object?>({
     required TResult Function(Cat cat) addToFavorites,
     required TResult Function(Cat cat) removeFromFavorites,
-    required TResult Function() loadFavorites,
-    required TResult Function() clearFavorites,
+    required TResult Function(Cat cat) addFavoritesToLocal,
+    required TResult Function() loadFavoritesFromLocal,
   }) {
     return removeFromFavorites(cat);
   }
@@ -334,8 +342,8 @@ class _$FavoritesCatsEventRemoveFromFavoritesImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(Cat cat)? addToFavorites,
     TResult? Function(Cat cat)? removeFromFavorites,
-    TResult? Function()? loadFavorites,
-    TResult? Function()? clearFavorites,
+    TResult? Function(Cat cat)? addFavoritesToLocal,
+    TResult? Function()? loadFavoritesFromLocal,
   }) {
     return removeFromFavorites?.call(cat);
   }
@@ -345,8 +353,8 @@ class _$FavoritesCatsEventRemoveFromFavoritesImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Cat cat)? addToFavorites,
     TResult Function(Cat cat)? removeFromFavorites,
-    TResult Function()? loadFavorites,
-    TResult Function()? clearFavorites,
+    TResult Function(Cat cat)? addFavoritesToLocal,
+    TResult Function()? loadFavoritesFromLocal,
     required TResult orElse(),
   }) {
     if (removeFromFavorites != null) {
@@ -362,10 +370,10 @@ class _$FavoritesCatsEventRemoveFromFavoritesImpl
         addToFavorites,
     required TResult Function(FavoritesCatsEventRemoveFromFavorites value)
         removeFromFavorites,
-    required TResult Function(FavoritesCatsEventLoadFavorites value)
-        loadFavorites,
-    required TResult Function(FavoritesCatsEventClearFavorites value)
-        clearFavorites,
+    required TResult Function(FavoritesCatsEventAddFavoritesToLocal value)
+        addFavoritesToLocal,
+    required TResult Function(FavoritesCatsEventLoadFavoritesFromLocal value)
+        loadFavoritesFromLocal,
   }) {
     return removeFromFavorites(this);
   }
@@ -376,8 +384,10 @@ class _$FavoritesCatsEventRemoveFromFavoritesImpl
     TResult? Function(FavoritesCatsEventAddToFavorites value)? addToFavorites,
     TResult? Function(FavoritesCatsEventRemoveFromFavorites value)?
         removeFromFavorites,
-    TResult? Function(FavoritesCatsEventLoadFavorites value)? loadFavorites,
-    TResult? Function(FavoritesCatsEventClearFavorites value)? clearFavorites,
+    TResult? Function(FavoritesCatsEventAddFavoritesToLocal value)?
+        addFavoritesToLocal,
+    TResult? Function(FavoritesCatsEventLoadFavoritesFromLocal value)?
+        loadFavoritesFromLocal,
   }) {
     return removeFromFavorites?.call(this);
   }
@@ -388,8 +398,10 @@ class _$FavoritesCatsEventRemoveFromFavoritesImpl
     TResult Function(FavoritesCatsEventAddToFavorites value)? addToFavorites,
     TResult Function(FavoritesCatsEventRemoveFromFavorites value)?
         removeFromFavorites,
-    TResult Function(FavoritesCatsEventLoadFavorites value)? loadFavorites,
-    TResult Function(FavoritesCatsEventClearFavorites value)? clearFavorites,
+    TResult Function(FavoritesCatsEventAddFavoritesToLocal value)?
+        addFavoritesToLocal,
+    TResult Function(FavoritesCatsEventLoadFavoritesFromLocal value)?
+        loadFavoritesFromLocal,
     required TResult orElse(),
   }) {
     if (removeFromFavorites != null) {
@@ -412,54 +424,81 @@ abstract class FavoritesCatsEventRemoveFromFavorites
 }
 
 /// @nodoc
-abstract class _$$FavoritesCatsEventLoadFavoritesImplCopyWith<$Res> {
-  factory _$$FavoritesCatsEventLoadFavoritesImplCopyWith(
-          _$FavoritesCatsEventLoadFavoritesImpl value,
-          $Res Function(_$FavoritesCatsEventLoadFavoritesImpl) then) =
-      __$$FavoritesCatsEventLoadFavoritesImplCopyWithImpl<$Res>;
+abstract class _$$FavoritesCatsEventAddFavoritesToLocalImplCopyWith<$Res> {
+  factory _$$FavoritesCatsEventAddFavoritesToLocalImplCopyWith(
+          _$FavoritesCatsEventAddFavoritesToLocalImpl value,
+          $Res Function(_$FavoritesCatsEventAddFavoritesToLocalImpl) then) =
+      __$$FavoritesCatsEventAddFavoritesToLocalImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Cat cat});
 }
 
 /// @nodoc
-class __$$FavoritesCatsEventLoadFavoritesImplCopyWithImpl<$Res>
+class __$$FavoritesCatsEventAddFavoritesToLocalImplCopyWithImpl<$Res>
     extends _$FavoritesCatsEventCopyWithImpl<$Res,
-        _$FavoritesCatsEventLoadFavoritesImpl>
-    implements _$$FavoritesCatsEventLoadFavoritesImplCopyWith<$Res> {
-  __$$FavoritesCatsEventLoadFavoritesImplCopyWithImpl(
-      _$FavoritesCatsEventLoadFavoritesImpl _value,
-      $Res Function(_$FavoritesCatsEventLoadFavoritesImpl) _then)
+        _$FavoritesCatsEventAddFavoritesToLocalImpl>
+    implements _$$FavoritesCatsEventAddFavoritesToLocalImplCopyWith<$Res> {
+  __$$FavoritesCatsEventAddFavoritesToLocalImplCopyWithImpl(
+      _$FavoritesCatsEventAddFavoritesToLocalImpl _value,
+      $Res Function(_$FavoritesCatsEventAddFavoritesToLocalImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? cat = null,
+  }) {
+    return _then(_$FavoritesCatsEventAddFavoritesToLocalImpl(
+      null == cat
+          ? _value.cat
+          : cat // ignore: cast_nullable_to_non_nullable
+              as Cat,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$FavoritesCatsEventLoadFavoritesImpl
-    implements FavoritesCatsEventLoadFavorites {
-  const _$FavoritesCatsEventLoadFavoritesImpl();
+class _$FavoritesCatsEventAddFavoritesToLocalImpl
+    implements FavoritesCatsEventAddFavoritesToLocal {
+  const _$FavoritesCatsEventAddFavoritesToLocalImpl(this.cat);
+
+  @override
+  final Cat cat;
 
   @override
   String toString() {
-    return 'FavoritesCatsEvent.loadFavorites()';
+    return 'FavoritesCatsEvent.addFavoritesToLocal(cat: $cat)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FavoritesCatsEventLoadFavoritesImpl);
+            other is _$FavoritesCatsEventAddFavoritesToLocalImpl &&
+            (identical(other.cat, cat) || other.cat == cat));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, cat);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FavoritesCatsEventAddFavoritesToLocalImplCopyWith<
+          _$FavoritesCatsEventAddFavoritesToLocalImpl>
+      get copyWith => __$$FavoritesCatsEventAddFavoritesToLocalImplCopyWithImpl<
+          _$FavoritesCatsEventAddFavoritesToLocalImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(Cat cat) addToFavorites,
     required TResult Function(Cat cat) removeFromFavorites,
-    required TResult Function() loadFavorites,
-    required TResult Function() clearFavorites,
+    required TResult Function(Cat cat) addFavoritesToLocal,
+    required TResult Function() loadFavoritesFromLocal,
   }) {
-    return loadFavorites();
+    return addFavoritesToLocal(cat);
   }
 
   @override
@@ -467,10 +506,10 @@ class _$FavoritesCatsEventLoadFavoritesImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(Cat cat)? addToFavorites,
     TResult? Function(Cat cat)? removeFromFavorites,
-    TResult? Function()? loadFavorites,
-    TResult? Function()? clearFavorites,
+    TResult? Function(Cat cat)? addFavoritesToLocal,
+    TResult? Function()? loadFavoritesFromLocal,
   }) {
-    return loadFavorites?.call();
+    return addFavoritesToLocal?.call(cat);
   }
 
   @override
@@ -478,12 +517,12 @@ class _$FavoritesCatsEventLoadFavoritesImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Cat cat)? addToFavorites,
     TResult Function(Cat cat)? removeFromFavorites,
-    TResult Function()? loadFavorites,
-    TResult Function()? clearFavorites,
+    TResult Function(Cat cat)? addFavoritesToLocal,
+    TResult Function()? loadFavoritesFromLocal,
     required TResult orElse(),
   }) {
-    if (loadFavorites != null) {
-      return loadFavorites();
+    if (addFavoritesToLocal != null) {
+      return addFavoritesToLocal(cat);
     }
     return orElse();
   }
@@ -495,12 +534,12 @@ class _$FavoritesCatsEventLoadFavoritesImpl
         addToFavorites,
     required TResult Function(FavoritesCatsEventRemoveFromFavorites value)
         removeFromFavorites,
-    required TResult Function(FavoritesCatsEventLoadFavorites value)
-        loadFavorites,
-    required TResult Function(FavoritesCatsEventClearFavorites value)
-        clearFavorites,
+    required TResult Function(FavoritesCatsEventAddFavoritesToLocal value)
+        addFavoritesToLocal,
+    required TResult Function(FavoritesCatsEventLoadFavoritesFromLocal value)
+        loadFavoritesFromLocal,
   }) {
-    return loadFavorites(this);
+    return addFavoritesToLocal(this);
   }
 
   @override
@@ -509,10 +548,12 @@ class _$FavoritesCatsEventLoadFavoritesImpl
     TResult? Function(FavoritesCatsEventAddToFavorites value)? addToFavorites,
     TResult? Function(FavoritesCatsEventRemoveFromFavorites value)?
         removeFromFavorites,
-    TResult? Function(FavoritesCatsEventLoadFavorites value)? loadFavorites,
-    TResult? Function(FavoritesCatsEventClearFavorites value)? clearFavorites,
+    TResult? Function(FavoritesCatsEventAddFavoritesToLocal value)?
+        addFavoritesToLocal,
+    TResult? Function(FavoritesCatsEventLoadFavoritesFromLocal value)?
+        loadFavoritesFromLocal,
   }) {
-    return loadFavorites?.call(this);
+    return addFavoritesToLocal?.call(this);
   }
 
   @override
@@ -521,57 +562,66 @@ class _$FavoritesCatsEventLoadFavoritesImpl
     TResult Function(FavoritesCatsEventAddToFavorites value)? addToFavorites,
     TResult Function(FavoritesCatsEventRemoveFromFavorites value)?
         removeFromFavorites,
-    TResult Function(FavoritesCatsEventLoadFavorites value)? loadFavorites,
-    TResult Function(FavoritesCatsEventClearFavorites value)? clearFavorites,
+    TResult Function(FavoritesCatsEventAddFavoritesToLocal value)?
+        addFavoritesToLocal,
+    TResult Function(FavoritesCatsEventLoadFavoritesFromLocal value)?
+        loadFavoritesFromLocal,
     required TResult orElse(),
   }) {
-    if (loadFavorites != null) {
-      return loadFavorites(this);
+    if (addFavoritesToLocal != null) {
+      return addFavoritesToLocal(this);
     }
     return orElse();
   }
 }
 
-abstract class FavoritesCatsEventLoadFavorites implements FavoritesCatsEvent {
-  const factory FavoritesCatsEventLoadFavorites() =
-      _$FavoritesCatsEventLoadFavoritesImpl;
+abstract class FavoritesCatsEventAddFavoritesToLocal
+    implements FavoritesCatsEvent {
+  const factory FavoritesCatsEventAddFavoritesToLocal(final Cat cat) =
+      _$FavoritesCatsEventAddFavoritesToLocalImpl;
+
+  Cat get cat;
+  @JsonKey(ignore: true)
+  _$$FavoritesCatsEventAddFavoritesToLocalImplCopyWith<
+          _$FavoritesCatsEventAddFavoritesToLocalImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$FavoritesCatsEventClearFavoritesImplCopyWith<$Res> {
-  factory _$$FavoritesCatsEventClearFavoritesImplCopyWith(
-          _$FavoritesCatsEventClearFavoritesImpl value,
-          $Res Function(_$FavoritesCatsEventClearFavoritesImpl) then) =
-      __$$FavoritesCatsEventClearFavoritesImplCopyWithImpl<$Res>;
+abstract class _$$FavoritesCatsEventLoadFavoritesFromLocalImplCopyWith<$Res> {
+  factory _$$FavoritesCatsEventLoadFavoritesFromLocalImplCopyWith(
+          _$FavoritesCatsEventLoadFavoritesFromLocalImpl value,
+          $Res Function(_$FavoritesCatsEventLoadFavoritesFromLocalImpl) then) =
+      __$$FavoritesCatsEventLoadFavoritesFromLocalImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$FavoritesCatsEventClearFavoritesImplCopyWithImpl<$Res>
+class __$$FavoritesCatsEventLoadFavoritesFromLocalImplCopyWithImpl<$Res>
     extends _$FavoritesCatsEventCopyWithImpl<$Res,
-        _$FavoritesCatsEventClearFavoritesImpl>
-    implements _$$FavoritesCatsEventClearFavoritesImplCopyWith<$Res> {
-  __$$FavoritesCatsEventClearFavoritesImplCopyWithImpl(
-      _$FavoritesCatsEventClearFavoritesImpl _value,
-      $Res Function(_$FavoritesCatsEventClearFavoritesImpl) _then)
+        _$FavoritesCatsEventLoadFavoritesFromLocalImpl>
+    implements _$$FavoritesCatsEventLoadFavoritesFromLocalImplCopyWith<$Res> {
+  __$$FavoritesCatsEventLoadFavoritesFromLocalImplCopyWithImpl(
+      _$FavoritesCatsEventLoadFavoritesFromLocalImpl _value,
+      $Res Function(_$FavoritesCatsEventLoadFavoritesFromLocalImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$FavoritesCatsEventClearFavoritesImpl
-    implements FavoritesCatsEventClearFavorites {
-  const _$FavoritesCatsEventClearFavoritesImpl();
+class _$FavoritesCatsEventLoadFavoritesFromLocalImpl
+    implements FavoritesCatsEventLoadFavoritesFromLocal {
+  const _$FavoritesCatsEventLoadFavoritesFromLocalImpl();
 
   @override
   String toString() {
-    return 'FavoritesCatsEvent.clearFavorites()';
+    return 'FavoritesCatsEvent.loadFavoritesFromLocal()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FavoritesCatsEventClearFavoritesImpl);
+            other is _$FavoritesCatsEventLoadFavoritesFromLocalImpl);
   }
 
   @override
@@ -582,10 +632,10 @@ class _$FavoritesCatsEventClearFavoritesImpl
   TResult when<TResult extends Object?>({
     required TResult Function(Cat cat) addToFavorites,
     required TResult Function(Cat cat) removeFromFavorites,
-    required TResult Function() loadFavorites,
-    required TResult Function() clearFavorites,
+    required TResult Function(Cat cat) addFavoritesToLocal,
+    required TResult Function() loadFavoritesFromLocal,
   }) {
-    return clearFavorites();
+    return loadFavoritesFromLocal();
   }
 
   @override
@@ -593,10 +643,10 @@ class _$FavoritesCatsEventClearFavoritesImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(Cat cat)? addToFavorites,
     TResult? Function(Cat cat)? removeFromFavorites,
-    TResult? Function()? loadFavorites,
-    TResult? Function()? clearFavorites,
+    TResult? Function(Cat cat)? addFavoritesToLocal,
+    TResult? Function()? loadFavoritesFromLocal,
   }) {
-    return clearFavorites?.call();
+    return loadFavoritesFromLocal?.call();
   }
 
   @override
@@ -604,12 +654,12 @@ class _$FavoritesCatsEventClearFavoritesImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Cat cat)? addToFavorites,
     TResult Function(Cat cat)? removeFromFavorites,
-    TResult Function()? loadFavorites,
-    TResult Function()? clearFavorites,
+    TResult Function(Cat cat)? addFavoritesToLocal,
+    TResult Function()? loadFavoritesFromLocal,
     required TResult orElse(),
   }) {
-    if (clearFavorites != null) {
-      return clearFavorites();
+    if (loadFavoritesFromLocal != null) {
+      return loadFavoritesFromLocal();
     }
     return orElse();
   }
@@ -621,12 +671,12 @@ class _$FavoritesCatsEventClearFavoritesImpl
         addToFavorites,
     required TResult Function(FavoritesCatsEventRemoveFromFavorites value)
         removeFromFavorites,
-    required TResult Function(FavoritesCatsEventLoadFavorites value)
-        loadFavorites,
-    required TResult Function(FavoritesCatsEventClearFavorites value)
-        clearFavorites,
+    required TResult Function(FavoritesCatsEventAddFavoritesToLocal value)
+        addFavoritesToLocal,
+    required TResult Function(FavoritesCatsEventLoadFavoritesFromLocal value)
+        loadFavoritesFromLocal,
   }) {
-    return clearFavorites(this);
+    return loadFavoritesFromLocal(this);
   }
 
   @override
@@ -635,10 +685,12 @@ class _$FavoritesCatsEventClearFavoritesImpl
     TResult? Function(FavoritesCatsEventAddToFavorites value)? addToFavorites,
     TResult? Function(FavoritesCatsEventRemoveFromFavorites value)?
         removeFromFavorites,
-    TResult? Function(FavoritesCatsEventLoadFavorites value)? loadFavorites,
-    TResult? Function(FavoritesCatsEventClearFavorites value)? clearFavorites,
+    TResult? Function(FavoritesCatsEventAddFavoritesToLocal value)?
+        addFavoritesToLocal,
+    TResult? Function(FavoritesCatsEventLoadFavoritesFromLocal value)?
+        loadFavoritesFromLocal,
   }) {
-    return clearFavorites?.call(this);
+    return loadFavoritesFromLocal?.call(this);
   }
 
   @override
@@ -647,20 +699,23 @@ class _$FavoritesCatsEventClearFavoritesImpl
     TResult Function(FavoritesCatsEventAddToFavorites value)? addToFavorites,
     TResult Function(FavoritesCatsEventRemoveFromFavorites value)?
         removeFromFavorites,
-    TResult Function(FavoritesCatsEventLoadFavorites value)? loadFavorites,
-    TResult Function(FavoritesCatsEventClearFavorites value)? clearFavorites,
+    TResult Function(FavoritesCatsEventAddFavoritesToLocal value)?
+        addFavoritesToLocal,
+    TResult Function(FavoritesCatsEventLoadFavoritesFromLocal value)?
+        loadFavoritesFromLocal,
     required TResult orElse(),
   }) {
-    if (clearFavorites != null) {
-      return clearFavorites(this);
+    if (loadFavoritesFromLocal != null) {
+      return loadFavoritesFromLocal(this);
     }
     return orElse();
   }
 }
 
-abstract class FavoritesCatsEventClearFavorites implements FavoritesCatsEvent {
-  const factory FavoritesCatsEventClearFavorites() =
-      _$FavoritesCatsEventClearFavoritesImpl;
+abstract class FavoritesCatsEventLoadFavoritesFromLocal
+    implements FavoritesCatsEvent {
+  const factory FavoritesCatsEventLoadFavoritesFromLocal() =
+      _$FavoritesCatsEventLoadFavoritesFromLocalImpl;
 }
 
 /// @nodoc

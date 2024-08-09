@@ -12,7 +12,7 @@ class CatApi {
 
     try {
       http.Response response =
-          await http.get(Uri.parse("https://api.thecatapi.com/v1/images/search?limit=20"), headers: {
+          await http.get(Uri.parse("https://api.thecatapi.com/v1/images/search?limit=30"), headers: {
         "x-api-key": apiKey,
       });
 

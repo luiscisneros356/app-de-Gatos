@@ -15,7 +15,7 @@ class CatsFavoritesScreen extends StatelessWidget {
 
     return Scaffold(
         appBar: AppBar(
-          title: const Text("Favorites Cats"),
+          title: const Text("Mis gatos favoritos"),
         ),
         body: bloc.maybeWhen(
           orElse: () => const Center(
