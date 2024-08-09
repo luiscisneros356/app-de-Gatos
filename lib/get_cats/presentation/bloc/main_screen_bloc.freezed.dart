@@ -107,15 +107,25 @@ class __$$MainScreenEventGetImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$MainScreenEventGetImpl implements MainScreenEventGet {
+class _$MainScreenEventGetImpl
+    with DiagnosticableTreeMixin
+    implements MainScreenEventGet {
   const _$MainScreenEventGetImpl(this.withConnectivity);
 
   @override
   final bool withConnectivity;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'MainScreenEvent.get(withConnectivity: $withConnectivity)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'MainScreenEvent.get'))
+      ..add(DiagnosticsProperty('withConnectivity', withConnectivity));
   }
 
   @override
@@ -230,12 +240,20 @@ class __$$MainScreenEventChargeDataImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$MainScreenEventChargeDataImpl implements MainScreenEventChargeData {
+class _$MainScreenEventChargeDataImpl
+    with DiagnosticableTreeMixin
+    implements MainScreenEventChargeData {
   const _$MainScreenEventChargeDataImpl();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'MainScreenEvent.chargeData()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'MainScreenEvent.chargeData'));
   }
 
   @override
@@ -413,12 +431,20 @@ class __$$MainScreenStateInitialImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$MainScreenStateInitialImpl implements MainScreenStateInitial {
+class _$MainScreenStateInitialImpl
+    with DiagnosticableTreeMixin
+    implements MainScreenStateInitial {
   const _$MainScreenStateInitialImpl();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'MainScreenState.initial()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'MainScreenState.initial'));
   }
 
   @override
@@ -536,12 +562,20 @@ class __$$MainScreenStateLoadingImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$MainScreenStateLoadingImpl implements MainScreenStateLoading {
+class _$MainScreenStateLoadingImpl
+    with DiagnosticableTreeMixin
+    implements MainScreenStateLoading {
   const _$MainScreenStateLoadingImpl();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'MainScreenState.loading()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'MainScreenState.loading'));
   }
 
   @override
@@ -673,7 +707,9 @@ class __$$MainScreenStateLoadedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$MainScreenStateLoadedImpl implements MainScreenStateLoaded {
+class _$MainScreenStateLoadedImpl
+    with DiagnosticableTreeMixin
+    implements MainScreenStateLoaded {
   const _$MainScreenStateLoadedImpl(final List<Cat> cats) : _cats = cats;
 
   final List<Cat> _cats;
@@ -685,8 +721,16 @@ class _$MainScreenStateLoadedImpl implements MainScreenStateLoaded {
   }
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'MainScreenState.loaded(cats: $cats)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'MainScreenState.loaded'))
+      ..add(DiagnosticsProperty('cats', cats));
   }
 
   @override
@@ -819,12 +863,20 @@ class __$$MainScreenStateOfflineImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$MainScreenStateOfflineImpl implements MainScreenStateOffline {
+class _$MainScreenStateOfflineImpl
+    with DiagnosticableTreeMixin
+    implements MainScreenStateOffline {
   const _$MainScreenStateOfflineImpl();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'MainScreenState.offline()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'MainScreenState.offline'));
   }
 
   @override
@@ -955,15 +1007,25 @@ class __$$MainScreenStateErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$MainScreenStateErrorImpl implements MainScreenStateError {
+class _$MainScreenStateErrorImpl
+    with DiagnosticableTreeMixin
+    implements MainScreenStateError {
   const _$MainScreenStateErrorImpl(this.message);
 
   @override
   final String message;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'MainScreenState.error(message: $message)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'MainScreenState.error'))
+      ..add(DiagnosticsProperty('message', message));
   }
 
   @override

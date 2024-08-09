@@ -13,27 +13,19 @@ part 'main_screen_state.dart';
 class MainScreenBloc extends Bloc<MainScreenEvent, MainScreenState> {
   final CatRepository _repository;
   final Connectivity _connectivity;
+
   final bool _isConnected = false;
   bool get isConnected => _isConnected;
   set isConnected(bool value) => value = _isConnected;
 
-  MainScreenBloc(
-    this._repository,
-    this._connectivity,
-  ) : super(const MainScreenState.initial()) {
+  MainScreenBloc(this._repository, this._connectivity) : super(const MainScreenState.initial()) {
     on<MainScreenEventChargeData>((event, emit) {
       _connectivity.onConnectivityChanged.listen((event) {
-        print(event);
         add(MainScreenEvent.get(!event.contains(ConnectivityResult.none)));
       });
     });
 
     on<MainScreenEventGet>((event, emit) async {
-      isConnected = event.withConnectivity;
-      print("isConnected  $isConnected");
-      print("event.withConnectivity ${event.withConnectivity}");
-      print("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
-
       try {
         if (event.withConnectivity) {
           emit(const MainScreenState.loading());

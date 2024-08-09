@@ -7,6 +7,8 @@ import '../bloc/favorites_cats_bloc.dart';
 class CatsFavoritesScreen extends StatelessWidget {
   const CatsFavoritesScreen({super.key});
 
+  static const String routeName = "/favorites";
+
   @override
   Widget build(BuildContext context) {
     final bloc = context.watch<FavoritesCatsBloc>().state;
@@ -17,21 +19,24 @@ class CatsFavoritesScreen extends StatelessWidget {
         ),
         body: bloc.maybeWhen(
           orElse: () => const Center(
-            child: Text("No agregaste ningun gato aun"),
+            child: Text("No agregaste ningun gato aun", style: TextStyle(fontSize: 20)),
           ),
           success: (_) => const CatsFavoritesListViweB(),
         ));
   }
 }
 
-class CatsFavoritesListViweB extends StatelessWidget {
+class CatsFavoritesListViweB extends StatefulWidget {
   const CatsFavoritesListViweB({super.key});
 
   @override
+  State<CatsFavoritesListViweB> createState() => _CatsFavoritesListViweBState();
+}
+
+class _CatsFavoritesListViweBState extends State<CatsFavoritesListViweB> {
+  @override
   Widget build(BuildContext context) {
     final bloc = context.watch<FavoritesCatsBloc>().state;
-    print(bloc.cats.length);
-    print(bloc);
 
     return ListView.builder(
       itemCount: bloc.cats.length,
@@ -71,7 +76,7 @@ class CatsFavoritesListViweB extends StatelessWidget {
                           TextButton(
                             onPressed: () {
                               context.read<FavoritesCatsBloc>().add(FavoritesCatsEvent.removeFromFavorites(cat));
-
+                              setState(() {});
                               Navigator.of(context).pop();
                             },
                             child: const Text("Eliminar"),

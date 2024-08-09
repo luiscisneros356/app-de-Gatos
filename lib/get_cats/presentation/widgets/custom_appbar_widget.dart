@@ -11,13 +11,13 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       title: const Text(
-        "Cats for adoption",
-        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+        "Gatos en adopcion",
+        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
       ),
       backgroundColor: Colors.lightBlue,
       actions: [
         TextButton.icon(
-          label: const Text("Favorites"),
+          label: const Text("Favoritos"),
           icon: const Icon(
             Icons.favorite,
             color: Colors.red,

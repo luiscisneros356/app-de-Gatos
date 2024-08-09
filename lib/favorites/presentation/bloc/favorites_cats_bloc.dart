@@ -8,7 +8,9 @@ part 'favorites_cats_event.dart';
 part 'favorites_cats_state.dart';
 
 class FavoritesCatsBloc extends Bloc<FavoritesCatsEvent, FavoritesCatsState> {
-  List<Cat> favoritesCats = [];
+  final List<Cat> _favoritesCats = [];
+  List<Cat> get favoritesCats => _favoritesCats;
+
   FavoritesCatsBloc() : super(const FavoritesCatsState.initial()) {
     on<FavoritesCatsEventAddToFavorites>((event, emit) {
       if (favoritesCats.contains(event.cat)) {

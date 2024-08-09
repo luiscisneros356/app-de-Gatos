@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class CatImageNetwork extends StatelessWidget {
@@ -6,22 +7,25 @@ class CatImageNetwork extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Image.network(
-      url,
-      loadingBuilder: (context, child, loadingProgress) => loadingProgress == null
-          ? child
-          : const CircularProgressIndicator(
-              color: Colors.red,
-              strokeWidth: 20,
-            ),
-      errorBuilder: (context, error, stackTrace) => const Column(
+    return CachedNetworkImage(
+      imageUrl: url,
+      placeholder: (context, _) => const CircularProgressIndicator(
+        color: Colors.red,
+        strokeWidth: 20,
+      ),
+      errorWidget: (context, error, stackTrace) => const Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Icon(
             Icons.error,
             size: 50,
+            color: Colors.red,
           ),
-          Text("Discuplas, algo salio mal al cargar el dato"),
+          Text(
+            "Disculpas, algo salio mal al cargar la imagen",
+            style: TextStyle(color: Colors.red, fontSize: 20),
+            maxLines: 2,
+          ),
         ],
       ),
       fit: BoxFit.cover,

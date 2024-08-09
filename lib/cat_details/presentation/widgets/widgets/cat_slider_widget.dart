@@ -1,11 +1,10 @@
-import 'package:challenge_flutter/cat_details/presentation/widgets/cat_details_screen.dart';
 import 'package:challenge_flutter/get_cats/presentation/bloc/extemsions/main_screen_bloc_extemsion.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../cat_details/presentation/bloc/cat_details_bloc.dart';
-import '../bloc/main_screen_bloc.dart';
-import 'cat_image_network.dart';
+import '../../../../get_cats/presentation/bloc/main_screen_bloc.dart';
+import '../../../../get_cats/presentation/widgets/cat_image_network.dart';
+import '../cat_details_screen.dart';
 
 class CatsSlider extends StatefulWidget {
   const CatsSlider({
@@ -30,7 +29,6 @@ class _CatsSliderState extends State<CatsSlider> {
     final mq = MediaQuery.of(context).size;
 
     final cats = context.watch<MainScreenBloc>().state.cats;
-    final setCat = context.read<CatDetailsBloc>();
 
     return PageView.builder(
       itemCount: cats.length,
@@ -42,7 +40,6 @@ class _CatsSliderState extends State<CatsSlider> {
             tag: cat.id,
             child: GestureDetector(
               onTap: () {
-                setCat.add(CatDetailsEvent.setCat(cat));
                 Navigator.push(
                   context,
                   MaterialPageRoute(

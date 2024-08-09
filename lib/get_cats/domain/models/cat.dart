@@ -40,4 +40,16 @@ class Cat extends HiveObject {
       description: Faker().lorem.sentences(15),
     );
   }
+
+  factory Cat.empty() {
+    return Cat(
+      breeds: [],
+      id: '',
+      url: '',
+      width: 0,
+      height: 0,
+      name: '',
+      description: [],
+    );
+  }
 }
