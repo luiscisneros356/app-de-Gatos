@@ -1,0 +1,89 @@
+import 'package:challenge_flutter/favorites/presentation/bloc/bloc_extensions/favorites_cats_bloc_extensions.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../bloc/favorites_cats_bloc.dart';
+
+class CatsFavoritesScreen extends StatelessWidget {
+  const CatsFavoritesScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final bloc = context.watch<FavoritesCatsBloc>().state;
+
+    return Scaffold(
+        appBar: AppBar(
+          title: const Text("Favorites Cats"),
+        ),
+        body: bloc.maybeWhen(
+          orElse: () => const Center(
+            child: Text("No agregaste ningun gato aun"),
+          ),
+          success: (_) => const CatsFavoritesListViweB(),
+        ));
+  }
+}
+
+class CatsFavoritesListViweB extends StatelessWidget {
+  const CatsFavoritesListViweB({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final bloc = context.watch<FavoritesCatsBloc>().state;
+    print(bloc.cats.length);
+    print(bloc);
+
+    return ListView.builder(
+      itemCount: bloc.cats.length,
+      itemBuilder: (BuildContext context, int index) {
+        final cat = bloc.cats[index];
+        return Container(
+          margin: const EdgeInsets.all(10),
+          decoration: BoxDecoration(
+            color: Colors.blue,
+            borderRadius: BorderRadius.circular(40),
+          ),
+          child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
+            SizedBox(
+              height: 100,
+              width: 100,
+              child: CircleAvatar(
+                backgroundImage: NetworkImage(cat.url),
+              ),
+            ),
+            Text(cat.name, style: const TextStyle(color: Colors.white, fontSize: 30)),
+            IconButton(
+              icon: const Icon(Icons.delete),
+              onPressed: () {
+                showDialog(
+                    context: context,
+                    builder: (context) {
+                      return AlertDialog(
+                        title: const Text("Eliminar gato"),
+                        content: const Text("¿Estas seguro de eliminar este gato de tus favoritos?"),
+                        actions: [
+                          TextButton(
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                            },
+                            child: const Text("Cancelar"),
+                          ),
+                          TextButton(
+                            onPressed: () {
+                              context.read<FavoritesCatsBloc>().add(FavoritesCatsEvent.removeFromFavorites(cat));
+
+                              Navigator.of(context).pop();
+                            },
+                            child: const Text("Eliminar"),
+                          ),
+                        ],
+                      );
+                    });
+              },
+            ),
+          ]),
+        );
+      },
+    );
+  }
+}
