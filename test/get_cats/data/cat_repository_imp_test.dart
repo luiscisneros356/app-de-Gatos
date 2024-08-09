@@ -9,7 +9,7 @@ import 'package:mockito/mockito.dart';
 
 import '../../mock_class/mock_class.mockito.mocks.dart';
 
-Future<void> main() async {
+void main() {
   late MockHiveGetCatsDataSource catLocalData;
   late MockClient client;
   late CatApi catApi;
