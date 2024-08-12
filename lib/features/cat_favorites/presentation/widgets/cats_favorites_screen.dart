@@ -26,21 +26,16 @@ class CatsFavoritesScreen extends StatelessWidget {
   }
 }
 
-class CatsFavoritesListViweB extends StatefulWidget {
+class CatsFavoritesListViweB extends StatelessWidget {
   const CatsFavoritesListViweB({super.key});
 
-  @override
-  State<CatsFavoritesListViweB> createState() => _CatsFavoritesListViweBState();
-}
-
-class _CatsFavoritesListViweBState extends State<CatsFavoritesListViweB> {
   @override
   Widget build(BuildContext context) {
     final bloc = context.watch<FavoritesCatsBloc>().state;
 
     return bloc.cats.isEmpty
         ? const Center(
-            child: Text("La lista está vacia", style: TextStyle(fontSize: 20)),
+            child: Text("No agregaste ningun gato aun", style: TextStyle(fontSize: 20)),
           )
         : ListView.builder(
             itemCount: bloc.cats.length,
@@ -80,7 +75,6 @@ class _CatsFavoritesListViweBState extends State<CatsFavoritesListViweB> {
                                 TextButton(
                                   onPressed: () {
                                     context.read<FavoritesCatsBloc>().add(FavoritesCatsEvent.removeFromFavorites(cat));
-                                    setState(() {});
                                     Navigator.of(context).pop();
                                   },
                                   child: const Text("Eliminar"),

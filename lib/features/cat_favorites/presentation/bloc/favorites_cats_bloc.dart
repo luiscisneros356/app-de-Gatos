@@ -41,6 +41,7 @@ class FavoritesCatsBloc extends Bloc<FavoritesCatsEvent, FavoritesCatsState> {
       if (favoritesCats.isNotEmpty) {
         favoritesCats.remove(event.cat);
         await _favoriteslocalRepository.removeFavorite(event.cat);
+        emit(const FavoritesCatsState.initial());
         emit(FavoritesCatsState.success(favoritesCats));
         if (favoritesCats.isEmpty) {
           emit(const FavoritesCatsState.initial());
